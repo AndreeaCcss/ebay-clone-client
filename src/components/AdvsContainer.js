@@ -10,6 +10,7 @@ class AdvsContainer extends Component {
     return <AdvsList advs={this.props.advs} />;
   }
 }
+
 function mapStateToProps(state) {
   return { advs: state.advs };
 }

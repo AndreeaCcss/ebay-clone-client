@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Provider } from "react-redux";
-import store from "./store";
 import AdvsContainer from "./components/AdvsContainer";
+import AdvFormContainer from "./components/AdvFormContainer";
+import AdvDetailsContainer from "./components/AdvDetailsContainer";
+import { Route } from "react-router-dom";
+
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <div className="App">
-          <AdvsContainer />
-        </div>
-      </Provider>
+      <div className="App">
+        <Route exact path="/advs" component={AdvsContainer} />
+        <Route exact path="/advs" component={AdvFormContainer} />
+        <Route exact path="/advs/:id" component={AdvDetailsContainer} />
+      </div>
     );
   }
 }
